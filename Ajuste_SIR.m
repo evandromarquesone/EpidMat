@@ -1,3 +1,8 @@
+% Material Complementar do Livro: 
+% Tópicos Matemáticos Aplicados na Modelagem em Epidemiologia - Estudos Transversais
+
+% = Outros Materiais estão disponíveis em https://linktr.ee/livroepidmat =
+
 %% = Ajuste de Dados de Infectados à Solução de Infectados do Modelo SIR =
 % Nesse programa fazemos o uso da função fminsearch, para minimizar a 
 % distância entre o valor ajustado e o valor observado. O programa foi
