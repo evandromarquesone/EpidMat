@@ -1,3 +1,8 @@
+% Material Complementar do Livro: 
+% Tópicos Matemáticos Aplicados na Modelagem em Epidemiologia - Estudos Transversais
+
+% = Outros Materiais estão disponíveis em https://linktr.ee/livroepidmat =
+
 %% =========== Exemplos de Aplicação do Método dos Quadrados Mínimos ======
 % Ajuste dos casos de infectados de Influenza à função y=a*exp(b*x)
 clc;  clear all;  close all; 
