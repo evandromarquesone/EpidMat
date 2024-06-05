@@ -53,6 +53,8 @@ bBarra(1,1)=dot(lnb,g1); bBarra(2,1)=dot(lnb,g2);
 %% =========== Resolvendo o Sistema via Fatoração Cholesky ==============
 %Para resolver o sistema com a fatoração Cholesky, baixe o programa 
 % "solvespd" disponível em https://www.ime.unicamp.br/~pulino/ALESA/Matlab/ 
+% E para entender melhor o uso das fatorações Cholesky e QR no método de Quadrados
+% Mínimos, consulte: https://www.ime.unicamp.br/~marcia/AlgebraLinear/quadrados_minimos.html
  [G] = chol(A);
  [x] =solvespd(G,bBarra,2); 
 
