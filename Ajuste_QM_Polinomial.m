@@ -55,6 +55,8 @@ bBarra(1,1)=dot(b,g1); bBarra(2,1)=dot(b,g2); bBarra(3,1)=dot(b,g3);
 % % ========= A matriz A do sistema deve ser positiva definida ===========
 % %Para resolver o sistema com a fatoração Cholesky, baixe o programa 
 % % "solvespd" disponível em https://www.ime.unicamp.br/~pulino/ALESA/Matlab/ 
+% E para entender melhor o uso das fatorações Cholesky e QR no método de Quadrados
+% Mínimos, consulte: https://www.ime.unicamp.br/~marcia/AlgebraLinear/quadrados_minimos.html
  [G] = chol(A);
  [x_Sol] =solvespd(G,bBarra,3); 
 % %=================== Solução via Fatoração QR ===========================
