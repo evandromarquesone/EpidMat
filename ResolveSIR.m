@@ -1,23 +1,23 @@
 % Material Complementar do Livro: 
-% TÛpicos Matem·ticos Aplicados na Modelagem em Epidemiologia - Estudos Transversais
+% Introdu√ß√£o √† Epidemiologia Matem√°tica: M√©todos em Estudos Transversais
 
-% = Outros Materiais est„o disponÌveis em https://linktr.ee/livroepidmat =
+% = Outros Materiais est√£o dispon√≠veis em https://linktr.ee/livroepidmat =
 
-% ======== Programa para Simular o Modelo epidemiolÛgico SIR ============
+% ======== Programa para Simular o Modelo epidemiol√≥gico SIR ============
 
-%comandos para n„o levar nenhum resÌduo computacional da simulaÁ„o anterior
+%comandos para n√£o levar nenhum res√≠duo computacional da simula√ß√£o anterior
 clc;  clear all;  close all; 
-% =========== Declarando os par‚metros (por dia) ========================
-% Esses par‚metros s„o utilizados aqui caso calcule o valor de Ro ou das
-% coordenadas do ponto de equilÌbrio endÍmico, por exemplo.
+% =========== Declarando os par√¢metros (por dia) ========================
+% Esses par√¢metros s√£o utilizados aqui caso calcule o valor de Ro ou das
+% coordenadas do ponto de equil√≠brio end√™mico, por exemplo.
 
-%% ======= Calculando Ro e o Ponto de EquilÌbrio EndÍmico ===============
-%%============= Comente caso n„o queria calcular ========================
-% Esses valores s„o utilizados somente para o c·lculo de Ro, ou do ponto de equilÌbrio (quando escrito). 
-% Para simular o modelo, È necess·rio declarar o valor dentro da funÁ„o "sir".  
-n=50000; %50 mil indivÌduos
+%% ======= Calculando Ro e o Ponto de Equil√≠brio End√™mico ===============
+%%============= Comente caso n√£o queria calcular ========================
+% Esses valores s√£o utilizados somente para o c√°lculo de Ro, ou do ponto de equil√≠brio (quando escrito). 
+% Para simular o modelo, √© necess√°rio declarar o valor dentro da fun√ß√£o "sir".  
+n=50000; %50 mil indiv√≠duos
 beta=0.1/n; %taxa per-capita de 10% dos encontros tornarem-se contaminados)
-nu=1/60; %(a taxa È 1 dividido pelo tempo em que se fica infectado)
+nu=1/60; %(a taxa √© 1 dividido pelo tempo em que se fica infectado)
 
 Ro=(beta*n)/nu
 % Seq=n/Ro     
@@ -31,29 +31,29 @@ Ro=(beta*n)/nu
 % % =================  Resolvendo o Sistema de EDO ========================
 t=600; %tempo em dias
 
-%aplicando o pacote ode45 no arquivo funÁ„o sir, que contÈm as equaÁıes
-% 0 vetor s„o as condiÁıes iniciais de suscetÌveis, infectados e
+%aplicando o pacote ode45 no arquivo fun√ß√£o sir, que cont√©m as equa√ß√µes
+% 0 vetor s√£o as condi√ß√µes iniciais de suscet√≠veis, infectados e
 % recuperados, respectivamente
 
 [T,Y]=ode45('sir',[0 t],[49999 1 0]);
-% Aqui T È o tempo em dias e Y a matriz com a soluÁ„o do modelo. O pacote
-% ode45 est· considerando a funÁ„o "sir", que contÈm as equaÁıes do modelo,
-% no intervalo de tempo inicial "0" e tempo final "t" (que È o valor
-% definido acima). J· nos ˙ltimos argumentos, temos como "49999 a
-% quantidade de indivÌduos SuscetÌveis, 1 Infectado e 0 Recuperados. Note
-% que a soma da quantidade de indivÌduos È exatamente igual ao N (a
-% populaÁ„o total considerada no modelo).
+% Aqui T √© o tempo em dias e Y a matriz com a solu√ß√£o do modelo. O pacote
+% ode45 est√° considerando a fun√ß√£o "sir", que cont√©m as equa√ß√µes do modelo,
+% no intervalo de tempo inicial "0" e tempo final "t" (que √© o valor
+% definido acima). J√° nos √∫ltimos argumentos, temos como "49999 a
+% quantidade de indiv√≠duos Suscet√≠veis, 1 Infectado e 0 Recuperados. Note
+% que a soma da quantidade de indiv√≠duos √© exatamente igual ao N (a
+% popula√ß√£o total considerada no modelo).
 
-%% ================ Plotando as SoluÁıes ====================
-figure(1) %plotando as 3 soluÁıes do modelo no mesmo gr·fico
+%% ================ Plotando as Solu√ß√µes ====================
+figure(1) %plotando as 3 solu√ß√µes do modelo no mesmo gr√°fico
 plot(T,Y(:,1),'k',T,Y(:,2),'--k',T,Y(:,3),'-.k')
 xlabel('Tempo (dias)'),
-ylabel('PopulaÁ„o Total'),
-legend('SuscetÌveis', 'Infectados', 'Recuperados')
+ylabel('Popula√ß√£o Total'),
+legend('Suscet√≠veis', 'Infectados', 'Recuperados')
 
-figure(2) %plotando somente a soluÁ„o de infectados do modelo
+figure(2) %plotando somente a solu√ß√£o de infectados do modelo
 plot(T,Y(:,2),'--k')
 xlabel('Tempo (dias)'),
-ylabel('PopulaÁ„o Total de Infectados'),
+ylabel('Popula√ß√£o Total de Infectados'),
 legend( 'Infectados')
 
