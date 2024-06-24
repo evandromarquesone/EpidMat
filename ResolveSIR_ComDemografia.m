@@ -1,5 +1,5 @@
 % Material Complementar do Livro: 
-% Tópicos Matemáticos Aplicados na Modelagem em Epidemiologia - Estudos Transversais
+% Introdução à Epidemiologia Matemática: Métodos em Estudos Transversais
 
 % = Outros Materiais estão disponíveis em https://linktr.ee/livroepidmat =
 
