@@ -1,4 +1,4 @@
-% Material Complementar do Livro: 
+%% Material Complementar do Livro: 
 % Introdução à Epidemiologia Matemática: Métodos em Estudos Transversais
 
 % = Outros Materiais estão disponíveis em https://linktr.ee/livroepidmat =
