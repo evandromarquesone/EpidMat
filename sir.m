@@ -1,17 +1,17 @@
 % Material Complementar do Livro: 
-% TÛpicos Matem·ticos Aplicados na Modelagem em Epidemiologia - Estudos Transversais
+% Introdu√ß√£o √† Epidemiologia Matem√°tica: M√©todos em Estudos Transversais
 
-% = Outros Materiais est„o disponÌveis em https://linktr.ee/livroepidmat =
+% = Outros Materiais est√£o dispon√≠veis em https://linktr.ee/livroepidmat =
 
 function dy = sir(t,y)
-% ============== Declarando o valor de cada Par‚metro ==================
-% Esses ser„o os valores utilizados para computar as coluÁıes numÈricas de cada populaÁ„o do modelo 
-n=50000; %50 mil indivÌduos
+% ============== Declarando o valor de cada Par√¢metro ==================
+% Esses ser√£o os valores utilizados para computar as colu√ß√µes num√©ricas de cada popula√ß√£o do modelo 
+n=50000; %50 mil indiv√≠duos
 beta=0.1/n; %taxa per-capita de 10% dos encontros tornarem-se contaminados)
-nu=1/60; %(a taxa È 1 dividido pelo tempo em que se fica infectado)
-%% ================ EquaÁıes do Modelo =================================
-dy = zeros(3,1); % declarando um vetor nulo, para evitar que o vetor criado na simulaÁ„o seja n„o nulo.
+nu=1/60; %(a taxa √© 1 dividido pelo tempo em que se fica infectado)
+%% ================ Equa√ß√µes do Modelo =================================
+dy = zeros(3,1); % declarando um vetor nulo, para evitar que o vetor criado na simula√ß√£o seja n√£o nulo.
 
-dy(1)=-beta*y(1)*y(2);              %SuscetÌveis      
+dy(1)=-beta*y(1)*y(2);              %Suscet√≠veis      
 dy(2)=beta*y(1)*y(2)-nu*y(2);       %Infectados   
 dy(3)=nu*y(2);                      %Recuperados
