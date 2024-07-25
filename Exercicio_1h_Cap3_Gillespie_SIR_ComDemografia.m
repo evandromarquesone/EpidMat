@@ -223,35 +223,6 @@ for k=1:Int+1
 %end
 end
 
-%% Comandos para salvar os dados de simulação e todas populações em todas
-% as iterações.
-
-% txtfile=['parametro' '.txt'];
-% f=fopen(txtfile, 'w');
-% fprintf(f,'Pop.\t ni\t beta\t gama\t sigma\t I\t T\t cont\n');
-% fclose(f);
-% parametros=[Np niest b g s I T cont];
-% save (txtfile, 'parametros', '-ascii','-append');
-% 
-% txtfile=['Pops' '.txt'];
-% g=fopen(txtfile, 'w');
-% fprintf(g,'X\t Hnv\t Hv\t Ynv\t Yv\t  Znv\t Zv\t V\t Va\t D\t Da\n');
-% % Hnv\t Hv\t Ynv\t Yv\t  Znv\t Zv\t V\t Va\t D\t Da\n'
-% fclose(g);
-% pops=[X Hnv Hv Ynv Yv Znv Zv V Va D Da];
-% save (txtfile, 'pops', '-ascii','-append');
-%
-% %=========  Montagem do Vetor Tempo ===================
-% for k=1:Int+1%1001
-%     temp(k)=(k-1)*dt;
-% end
-% 
-% soma=HM+YM; %soma de exposto com infectado
-% Tstop1=temp(find(soma<1,1));
-% Tstop05=temp(find(soma<0.5,1));
-% Tstop01=temp(find(soma<0.1,1));
-% %plot(temp,XM,temp,XMed,temp,Xq,temp,XQ)
-
 %% ======================== Plotagem de Gráficos ========================= 
 figure(1)
 title('Media, mediana, quantis 0.025 e 0.975 com tempo continuo')
@@ -265,26 +236,7 @@ ylabel('Infectados')
 subplot(3,1,3), plot(temp,RM,temp,RMed,temp,Rq,temp,RQ)
 xlabel('tempo (dias)')
 ylabel('Recuperados')
-% subplot(2,3,4), plot(temp,YM,temp,YMed,temp,Yq,temp,YQ)
-% xlabel('tempo (dias)')
-% ylabel('Insetos Portadores')
-% 
-% % subplot(3,3,6), plot(temp,ZM,temp,ZMed,temp,Zq,temp,ZQ)
-% % xlabel('tempo (dias)')
-% % ylabel('Recuperados')
-% subplot(2,3,6), plot(temp,CM,temp,CMed,temp,Cq,temp,CQ)
-% xlabel('tempo (dias)')
-% ylabel('tamanho pop.')
-% % subplot(3,3,5), plot(temp,DM,temp,DMed,temp,Dq,temp,DQ)
-% % xlabel('tempo (dias)')
-% % ylabel('Desperdicio')
-% % subplot(3,3,7), plot(temp,VaM,temp,VaMed,temp,Vaq,temp,VaQ)
-% % xlabel('tempo (dias)')
-% % ylabel('VRinados Rumulados ex-susc.')
-% % subplot(3,3,8), plot(temp,DaM,temp,DaMed,temp,Daq,temp,DaQ)
-% % xlabel('tempo (dias)')
-% % ylabel('Desperdicio Rumulados')
-% 
+
 figure(2)
 title('Trajetorias aleatorias no tempo continuo')
 subplot(3,1,1), plot(temp,Sn1,temp,Sn2,temp,Sn3)
@@ -297,26 +249,6 @@ ylabel('Infectados')
 subplot(3,1,3), plot(temp,Rn1,temp,Rn2,temp,Rn3)
 xlabel('tempo (dias)')
 ylabel('Recuperados')
-% subplot(2,3,4), plot(temp,Yn1,temp,Yn2,temp,Yn3)
-% xlabel('tempo (dias)')
-% ylabel('Insetos Portadores')
-% 
-% subplot(2,3,6), plot(temp,Cn1,temp,Cn2,temp,Cn3)
-% xlabel('tempo (dias)')
-% ylabel('tamanho pop.')
-% % subplot(3,3,9), plot(temp,Nn1,temp,Nn2,temp,Nn3)
-% % xlabel('tempo (dias)')
-% % ylabel('tamanho pop.')
-% % subplot(3,3,5), plot(temp,Dn1,temp,Dn2,temp,Dn3)
-% % xlabel('tempo (dias)')
-% % ylabel('Desperdicio')
-% % subplot(3,3,7), plot(temp,Van1,temp,Van2,temp,Van3)
-% % xlabel('tempo (dias)')
-% % ylabel('VRinados Rumulados ex-susc.')
-% % subplot(3,3,8), plot(temp,Dan1,temp,Dan2,temp,Dan3)
-% % xlabel('tempo (dias)')
-% % ylabel('Desperdicio Rumulados')
-
 
 %% =========== Organizando e Salvando os dados ==========================
 saidasSsemCon=[SM(Int+1,1);SMed(Int+1,1);Sq(Int+1,1);SQ(Int+1,1);Ro];
